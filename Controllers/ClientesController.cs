@@ -55,7 +55,7 @@ namespace NovoApiBarbearia.Controllers
             _context.Cliente.Add(cliente);
             await _context.SaveChangesAsync();
 
-            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            //return CreatedAtAction("GetClientes", new { id = cliente.Id }, cliente);
             return CreatedAtAction(nameof(GetClientes), new { id = cliente.Id }, cliente);
         }
 
