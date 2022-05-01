@@ -50,7 +50,7 @@ namespace NovoApiBarbearia.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostTodoItem(Cliente cliente)
+        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
             _context.Cliente.Add(cliente);
             await _context.SaveChangesAsync();

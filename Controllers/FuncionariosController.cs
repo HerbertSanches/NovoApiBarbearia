@@ -24,7 +24,6 @@ namespace NovoApiBarbearia.Controllers
             return await _context.Funcionario.ToListAsync();
         }
 
-        // GET: api/Funcionarios/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Funcionario>> GetFuncionario(int id)
         {
@@ -49,10 +48,10 @@ namespace NovoApiBarbearia.Controllers
         [HttpPost]
         public async Task<ActionResult<Funcionario>> PostFuncionario(Funcionario funcionario)
         {
+            //colocar criptografia na senha no put e post!
             _context.Funcionario.Add(funcionario);
             await _context.SaveChangesAsync();
 
-            //return CreatedAtAction("GetFuncionario", new { id = funcionario.Id }, funcionario);
             return CreatedAtAction(nameof(GetFuncionario), new { id = funcionario.Id }, funcionario);
         }
 
@@ -62,7 +61,6 @@ namespace NovoApiBarbearia.Controllers
             _context.Funcionario.Remove(funcionario);
             await _context.SaveChangesAsync();
 
-            //return CreatedAtAction("GetFuncionario", new { id = funcionario.Id }, funcionario);
             return CreatedAtAction(nameof(RemoveFuncionario), new { id = funcionario.Id }, funcionario);
 
         }

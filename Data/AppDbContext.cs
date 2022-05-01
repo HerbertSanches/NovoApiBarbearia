@@ -13,7 +13,6 @@ namespace NovoApiBarbearia.Data
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Produto> Produto { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>()
@@ -27,9 +26,8 @@ namespace NovoApiBarbearia.Data
 
             modelBuilder.Entity<Produto>()
                 .HasData(new Produto { Id = 1, Nome = "Corte", Valor = 25 });
+
+
         }
-
-
-
     }
 }
